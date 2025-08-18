@@ -63,11 +63,11 @@ ui <- navbarPage(
       h3("About This App"),
       div(
         p("This app was developed to accompany the publication ", 
-          tags$em("'A comprehensive analysis of nanoparticle isolation and cargo in colorectal cancer'"), 
+          tags$em("'A comprehensive analysis of supermere, exomere, and extracellular vesicle isolation and cargo in colorectal cancer'"), 
           " [DOI:XXXXXXXX]."),
         p("It provides an interactive platform to explore EV and NVEP Omics datasets generated from DiFi cells across various data types, including:"),
         tags$ul(
-          tags$li(tags$b("Proteomics:"), " Supports searching for individual proteins using Gene Name nomenclature. Data is reported as log2-normalized counts."),
+          tags$li(tags$b("Proteomics:"), " Supports searching for individual proteins using Gene Name nomenclature. Data is reported as median normalized counts."),
           tags$li(tags$b("RNA-seq:"), " Provides an overview of all host genome small RNA types (sRNA type) and browsing expression for each individual sRNA by type (e.g., miRNA, lncRNA, snRNA). Data is reported as reads per million total reads."),
           tags$li(tags$b("Lipidomics:"), " Enables an overview of all lipids categorized by Category, Class, Subclass, or Species. Data is reported as log2-normalized counts.")
         )
@@ -83,6 +83,9 @@ ui <- navbarPage(
         h4("Resources:"),
         tags$ul(
           tags$li("Refer to the publication for detailed explanations on methods used for data acquisition and preprocessing."),
+          tags$li("Raw data available at publicly accessible databases: proteomics at ", tags$a(href = "https://www.peptideatlas.org/PASS/PXD066872", "PeptideAtlas"), 
+                  ", RNA-seq at ", tags$a(href = "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE234567", "GEO"), 
+                  ", and lipidomics at ", tags$a(href = "https://www.lipidmaps.org/data/lipidomics/", "LIPID MAPS"),
           tags$li("Access the source code and datasets on ", tags$a(href = "https://github.com/rskks/GOFiltering/tree/main/browse", "GitHub"), ".")
         )
       )
@@ -377,7 +380,7 @@ server <- function(input, output, session) {
                            "Lipidomics" = input$lipid)
     
     y_label <- switch(input$dataset,
-                      "Proteomics" = "log-2 normalized counts",
+                      "Proteomics" = "normalized counts",
                       "RNA-seq" = "reads per million total reads",
                       "Lipidomics" = "log-2 normalized counts")
     
