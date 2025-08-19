@@ -5,7 +5,7 @@ account: rskks
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 12629059
-bundleId: 9561538
+bundleId: 10787073
 url: https://rskks.shinyapps.io/browse/
 version: 1
 asMultiple: FALSE

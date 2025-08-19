@@ -83,9 +83,7 @@ ui <- navbarPage(
         h4("Resources:"),
         tags$ul(
           tags$li("Refer to the publication for detailed explanations on methods used for data acquisition and preprocessing."),
-          tags$li("Raw data available at publicly accessible databases: proteomics at ", tags$a(href = "https://www.peptideatlas.org/PASS/PXD066872", "PeptideAtlas"), 
-                  ", RNA-seq at ", tags$a(href = "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE234567", "GEO"), 
-                  ", and lipidomics at ", tags$a(href = "https://www.lipidmaps.org/data/lipidomics/", "LIPID MAPS"),
+          tags$li("Raw data available at publicly accessible databases: proteomics at ProteomeXchange (PXD066872), RNA-seq at GEO (GEO: GSE304273), and lipidomics at MetaboLights (REQ20250801212184)."),
           tags$li("Access the source code and datasets on ", tags$a(href = "https://github.com/rskks/GOFiltering/tree/main/browse", "GitHub"), ".")
         )
       )
